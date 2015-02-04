@@ -49,8 +49,8 @@ class pokemon
 	*@post attacks or blocks attack
 	*return if attack is greater than defesne then returns damage to enemy
 	*/
-	int attack(int attack_roll, int defense_roll);
-
+	//int attack(int attack_roll, int defense_roll);
+	int attacks();
 	/**
 	*@pre attack must be greater than defense
 	*@post takes away life from opponent
@@ -126,14 +126,14 @@ class pokemon
 	*@post using d20 gets if attack is greater than defense
 	*return if attack hit or not
 	*/
-	bool attack_roll(std::string poke1, int attacker, std::string poke2, int defender);
+	//bool attack_roll(std::string poke1, int attacker, std::string poke2, int defender);
 
 	/**
 	*@pre every method in class
 	*@post displays game being played
 	*return game being played
 	*/
-	void userBuild();
+	//void userBuild();
 
 	private:
 	/**

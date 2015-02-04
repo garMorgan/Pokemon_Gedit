@@ -1,12 +1,45 @@
 #include <iostream>
 #include "Dice.h"
 #include "pokemon.h"
+#include "colosseum.h"
 #include <string>
+#include <sstream>
+#include <unistd.h>
 
 using namespace std;
 
+
+
+
 int main()
 {
+	string pokeMon1;	
+	string pokeMon2;
+	//int health;
+	//int attack_bonus;
+	//int defend_bonus;
+	colosseum game;
+
+	cout << "Player1, build your Pokemon!" << endl;
+	cout << "=====================" << endl;
+	cout << "Please name your pokemon" << endl;
+	getline (cin, pokeMon1);
+	cout << pokeMon1 << endl;
+	pokemon poke1;
+	game.userBuild(poke1);
+
+	cout << "Player2, build your Pokemon!" << endl;
+	cout << "=====================" << endl;
+	cout << "Please name your pokemon" << endl;
+	getline (cin, pokeMon2);
+	getline (cin, pokeMon2);
+	cout << pokeMon2 << endl;
+	pokemon poke2;
+
+	
+
+	
+
 	/*
 	Dice d2 = Dice(2);
 	Dice d6 = Dice(6);
@@ -18,12 +51,7 @@ int main()
 	cout << test << endl;
 	*/
 
-
-	pokemon poke1;
-	pokemon poke2;
-	
-	poke1.userBuild();
-	poke2.userBuild();
-
 	return 0;
 }
+
+
