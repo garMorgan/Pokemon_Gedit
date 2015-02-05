@@ -22,34 +22,14 @@ int main()
 
 	cout << "Player1, build your Pokemon!" << endl;
 	cout << "=====================" << endl;
-	cout << "Please name your pokemon" << endl;
-	getline (cin, pokeMon1);
-	cout << pokeMon1 << endl;
 	pokemon poke1;
 	game.userBuild(poke1);
 
 	cout << "Player2, build your Pokemon!" << endl;
 	cout << "=====================" << endl;
-	cout << "Please name your pokemon" << endl;
-	getline (cin, pokeMon2);
-	getline (cin, pokeMon2);
-	cout << pokeMon2 << endl;
 	pokemon poke2;
+	game.userBuild(poke2);
 
-	
-
-	
-
-	/*
-	Dice d2 = Dice(2);
-	Dice d6 = Dice(6);
-	Dice d20 = Dice(20);
-	cout << "This is your roll " << d2.roll() << endl;
-	cout << "This is your roll " << d6.roll() << endl;
-	cout << "This is your roll " << d20.roll() << endl;
-	string test ("Hello Dude");
-	cout << test << endl;
-	*/
 
 	return 0;
 }

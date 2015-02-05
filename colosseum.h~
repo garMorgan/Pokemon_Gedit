@@ -32,7 +32,8 @@ class colosseum
 	*return game being played
 	*/
 	void userBuild(pokemon& p);
-	void gameBuild();
+
+	void play(pokemon& p1, pokemon& p2);
 
 
 	/**
@@ -57,7 +58,7 @@ class colosseum
 	*@post attacks or blocks attack
 	*return if attack is greater than defesne then returns damage to enemy
 	*/
-	int attack(int attack_roll, int defense_roll);
+	bool attack(const attack_roll, const defense_roll);
 
 	int attacks();
 	/**
@@ -93,7 +94,7 @@ class colosseum
 	*@post user now can add defense roll with defensebonus
 	*return defensebonus
 	*/
-	int get_defenseBonus();
+	int get_defenseBonus() const;
 
 	/**
 	*@pre none

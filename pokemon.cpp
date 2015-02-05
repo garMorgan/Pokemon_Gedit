@@ -17,21 +17,20 @@ using namespace std;
 
 pokemon::pokemon()
 {
-	string user_name;
-	string name;
-	//int health = 0;
-	//int attack = 0;
-	//int defense = 0;
+	m_name = "";
+	attack_lvl =0;
+	defense_lvl=0;
+	m_hp=0;
 	myPokemon = "";
 }
 
 int pokemon::set_attackBonus(int attackBonus)
 {
-	return attackBonus;
+	attack_lvl = attackBonus;
 }
 int pokemon::set_defenseBonus(int defenseBonus)
 {
-	return defenseBonus;
+	defense_lvl = defenseBonus;
 }
 int pokemon::get_attackBonus() const
 {
@@ -43,15 +42,15 @@ int pokemon::get_defenseBonus() const
 }
 string pokemon::set_name(string name)
 {
-	return myPokemon = name;
+	m_name = name;
 }
 string pokemon::get_name() const
 {
-	return myPokemon;
+	return name;
 }
 int pokemon::set_health(int health)
 {
-	return health;
+	return m_hp = health;
 }
 int pokemon::get_health(int damage)
 {
@@ -63,19 +62,4 @@ int pokemon::health_check()
 	return health;
 }
 
-
-
-int pokemon::attacks()
-{
-	Dice d6aa = Dice(6);
-	Dice d6bb = Dice(6);
-	Dice d6cc = Dice(6);
-	int d6a = d6aa.roll();
-	int d6b = d6bb.roll();
-	int d6c = d6cc.roll();
-	damage = d6a + d6b + d6c;
-	cout << "The attack hits! Dealing 3-D6 damage!!" << endl;
-	cout << "Rolls are " << d6a << ", " << d6b << ", " << d6c << " totaling to " << damage << " damage!" << endl;
-	return damage;
-}
 

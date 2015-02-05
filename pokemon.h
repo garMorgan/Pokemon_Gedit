@@ -128,12 +128,8 @@ class pokemon
 	*/
 	//bool attack_roll(std::string poke1, int attacker, std::string poke2, int defender);
 
-	/**
-	*@pre every method in class
-	*@post displays game being played
-	*return game being played
-	*/
-	//void userBuild();
+	std::string name;
+	int health;
 
 	private:
 	/**
@@ -141,7 +137,9 @@ class pokemon
 	*@post initializes all numeric data to zero and strings
 	*return health
 	*/
-	int health;
+	int m_hp;
+	
+	std::string m_name;
 
 	/**
 	*@pre none
@@ -149,14 +147,14 @@ class pokemon
 	*return attackbonus
 	*/
 	int attack_bonus;
-
+	int attack_lvl;
 	/**
 	*@pre none
 	*@post gets users defensebonus
 	*return defensebonus
 	*/
 	int defense_bonus;
-
+	int defense_lvl;
 	/**
 	*@pre none
 	*@post roll of a 20sided die

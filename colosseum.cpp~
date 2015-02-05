@@ -27,10 +27,19 @@ colosseum::colosseum()
 
 void colosseum::userBuild(pokemon& p)
 {
+	pokemon poke;
+	string n1;	
+	
+	cout << "Please name your pokemon" << endl;
+	cin >> n1;
+	poke.set_name(n1);
+	cout << "\n" << poke.get_name() << endl;
 	do
 	{
 	cout << "How many hit points will you have? (1-50): ";
 	cin >> health;
+	poke.set_health(health);
+	cout << "\n" << poke.health_check() << endl;
 	}while(health>0 != health<51);
 
 	cout << "\n";
@@ -39,6 +48,8 @@ void colosseum::userBuild(pokemon& p)
 	cout << "Split fifty points between attack level and defense level " << endl;
 	cout << "Enter your attack level (1-49): ";
 	cin >> attack_bonus;
+	poke.set_attackBonus(attack_bonus);
+	cout << "\n" << poke.get_attackBonus() << endl;
 	if(attack_bonus>0 != attack_bonus<50)
 	{
 	cout << "Sorry, attack level must be between 1 and 49: ";
@@ -51,6 +62,8 @@ void colosseum::userBuild(pokemon& p)
 	sum = 50 - attack_bonus;	
 	cout << "Enter your defense level (1-" << sum << "): ";
 	cin >> defense_bonus;
+	poke.set_defenseBonus(defense_bonus);
+	cout << "\n" << poke.get_defenseBonus() << endl;
 	if(defense_bonus>0 != defense_bonus<=sum)
 		{
 		cout << "Sorry, defense level must be between 1 and " << sum << ": ";
@@ -60,30 +73,17 @@ void colosseum::userBuild(pokemon& p)
 	
 }
 
-/*
-int pokemon::set_attackBonus(int attackBonus)
-{
-	return attackBonus;
-}
-int pokemon::set_defenseBonus(int defenseBonus)
-{
-	return defenseBonus;
-}
-int pokemon::get_attackBonus() const
-{
-	return attack_bonus;
-}
-int pokemon::get_defenseBonus() const
-{
-	return defense_bonus;
-}
-*/
 
-
-int colosseum::attack(int attack_roll, int defense_roll)
+bool colosseum::attack(const pokemon& attacker, pokemon& defender)
 {
-	pokemon poke;
-	if((attack_roll+poke.get_attackBonus())>(defense_roll+poke.get_defenseBonus()))
+	Dice d20 = Dice(20);
+	int dieAttack = d20.roll();
+	int dieDefense = d20.roll();
+	cout << attacker.get_name() << " is attacking " << defender.get_name();
+	cout << attacker.get_name() << " rolls an attack bonus of " << dieAttack;
+	cout << defender.get_name() << " rolls a defense bonus of " << dieDefense;
+
+	if((attacker.get_attackBonus()+dieAttack)>(dieDefense+defender.get_defenseBonus()))
 	{
 	Dice d6aa = Dice(6);
 	Dice d6bb = Dice(6);
@@ -93,7 +93,8 @@ int colosseum::attack(int attack_roll, int defense_roll)
 	int d6c = d6cc.roll();
 	damage = d6a + d6b + d6c;
 	cout << "The attack hits! Dealing 3-D6 damage!!" << endl;
-	cout << "Rolls are " << d6a << ", " << d6b << ", " << d6c << " totaling to " << damage << " damage!" << endl;	
+	cout << "Rolls are " << d6a << ", " << d6b << ", " << d6c << " totaling to " << damage << " damage!" << endl;
+	defender.get_health(damage);	
 	}
 	else
 	{
@@ -104,8 +105,11 @@ int colosseum::attack(int attack_roll, int defense_roll)
 }
 
 
-void colosseum::gameBuild()
+void colosseum::play(pokemon& p1, pokemon& p2)
 {
+	bool fin = false;
+	pokemon poke;
+	poke.get_name();
 	Dice d2 = Dice(2);
 	cout << "Player 1 will roll a D2 to decide who goes first" << endl;
 	for(int i=0;i<1;i++)
@@ -114,13 +118,29 @@ void colosseum::gameBuild()
 		if(roll == 1)
 		{
 		cout << "Player 1 rolls a " << roll << " and will go first" << endl;
+		for(int j=1; j<=10;j++)
+	{
+		cout << endl;
+		cout << "Round " << j << "!" << endl;
+		cout << endl;
+		fin = attack(p1, p2);
+		if(p1.health_check()>0)
+		{
+		cout << p2.get_name() << " has " << p2.health_check() << " hit points left";
+		}
+		else
+		{
+		cout << p2.get_name() << " has been defeated";
+		break;
+		}
+	}		
+
 		}
 		else
 		{
 		cout << "Player 1 rolls a " << roll << " and will go second" << endl;
 		}
-
 	}
+	
+
 }
-
-
