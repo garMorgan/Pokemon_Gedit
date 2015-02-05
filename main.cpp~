@@ -15,9 +15,6 @@ int main()
 {
 	string pokeMon1;	
 	string pokeMon2;
-	//int health;
-	//int attack_bonus;
-	//int defend_bonus;
 	colosseum game;
 
 	cout << "Player1, build your Pokemon!" << endl;
@@ -29,6 +26,8 @@ int main()
 	cout << "=====================" << endl;
 	pokemon poke2;
 	game.userBuild(poke2);
+
+	
 
 
 	return 0;

@@ -27,6 +27,8 @@ int main()
 	pokemon poke2;
 	game.userBuild(poke2);
 
+	game.play(poke1,poke2);
+
 
 	return 0;
 }

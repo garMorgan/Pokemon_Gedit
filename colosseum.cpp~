@@ -31,7 +31,7 @@ void colosseum::userBuild(pokemon& p)
 	
 	cout << "Please name your pokemon" << endl;
 	cin >> n1;
-	p.set_name(n1);
+	p.set_name(n1)
 	cout << "\n" << p.get_name() << endl;
 	do
 	{

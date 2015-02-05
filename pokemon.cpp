@@ -34,23 +34,25 @@ int pokemon::set_defenseBonus(int defenseBonus)
 }
 int pokemon::get_attackBonus() const
 {
-	return attack_bonus;
+	return attack_lvl;
 }
 int pokemon::get_defenseBonus() const
 {
-	return defense_bonus;
+	return defense_lvl;
 }
+
 string pokemon::set_name(string name)
 {
 	m_name = name;
 }
 string pokemon::get_name() const
 {
-	return name;
+	return m_name;
 }
+
 int pokemon::set_health(int health)
 {
-	return m_hp = health;
+	m_hp = health;
 }
 int pokemon::get_health(int damage)
 {
@@ -59,7 +61,7 @@ int pokemon::get_health(int damage)
 }
 int pokemon::health_check()
 {
-	return health;
+	return m_hp;
 }
 
 
