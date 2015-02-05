@@ -63,63 +63,63 @@ class pokemon
 	*@post sets attackbonus from user
 	*return attackbonus from user
 	*/
-	int set_attackBonus(pokemon& p1, int attackBonus);
+	int set_attackBonus(int attackBonus);
 
 	/**
 	*@pre none
 	*@post sets defensebonus from user
 	*return defensebonus from user
 	*/
-	int set_defenseBonus(pokemon& p1,int defenseBonus);
+	int set_defenseBonus(int defenseBonus);
 
 	/**
 	*@pre set attackbonus
 	*@post user now can add attack roll with attackbonus
 	*return attackbonus
 	*/
-	int get_attackBonus(pokemon& p1) const;
+	int get_attackBonus() const;
 
 	/**
 	*@pre set defensebonus
 	*@post user now can add defense roll with defensebonus
 	*return defensebonus
 	*/
-	int get_defenseBonus(pokemon& p1) const;
+	int get_defenseBonus() const;
 
 	/**
 	*@pre none
 	*@post set health from user
 	*return health
 	*/
-	int set_health(pokemon&, int health);
+	int set_health(int health);
 
 	/**
 	*@pre sethealth
 	*@post subtracts total damage from health
 	*return damage
 	*/
-	int get_health(pokemon& p1,int damage);
+	int get_health(int damage);
 
 	/**
 	*@pre none
 	*@post shows user amount of health
 	*return health
 	*/
-	int health_check(pokemon& p1);
+	int health_check();
 	
 	/**
 	*@pre none
 	*@post sets name from user
 	*return name of pokemon
 	*/
-	std::string set_name(pokemon& p1,std::string name);
+	std::string set_name(std::string name);
 
 	/**
 	*@pre setname
 	*@post displays name
 	*return name of pokemon
 	*/
-	std::string get_name(pokemon& p1) const;
+	std::string get_name();
 
 	/**
 	*@pre attackers name and attack, defenders name and defense

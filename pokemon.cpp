@@ -56,8 +56,8 @@ int pokemon::set_health(int health)
 }
 int pokemon::get_health(int damage)
 {
-	health = (health - damage);
-	return health;
+	m_hp = (m_hp - damage);
+	return m_hp;
 }
 int pokemon::health_check()
 {

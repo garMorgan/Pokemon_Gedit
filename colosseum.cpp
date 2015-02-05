@@ -76,9 +76,18 @@ void colosseum::userBuild(pokemon& p)
 bool colosseum::attack(const pokemon& attacker, pokemon& defender)
 {
 	Dice d20 = Dice(20);
+	
 	int dieAttack = d20.roll();
+	for(int i=1; i<500000000;i++)
+	{
+
+	}
 	int dieDefense = d20.roll();
-	cout << attacker.get_name() << " is attacking " << defender.get_name();
+	for(int i=1; i<500000000;i++)
+	{
+
+	}
+	cout << attacker.get_name() << " is attacking " << defender.get_name() << endl;
 	cout << attacker.get_name() << " rolls an attack bonus of " << dieAttack;
 	cout << defender.get_name() << " rolls a defense bonus of " << dieDefense;
 
@@ -88,8 +97,17 @@ bool colosseum::attack(const pokemon& attacker, pokemon& defender)
 	Dice d6bb = Dice(6);
 	Dice d6cc = Dice(6);
 	int d6a = d6aa.roll();
+	for(int i=1; i<500000000;i++)
+	{
+	}
 	int d6b = d6bb.roll();
+	for(int i=1; i<500000000;i++)
+	{
+	}
 	int d6c = d6cc.roll();
+	for(int i=1; i<500000000;i++)
+	{
+	}
 	damage = d6a + d6b + d6c;
 	cout << "The attack hits! Dealing 3-D6 damage!!" << endl;
 	cout << "Rolls are " << d6a << ", " << d6b << ", " << d6c << " totaling to " << damage << " damage!" << endl;
@@ -109,7 +127,7 @@ void colosseum::play(pokemon& p1, pokemon& p2)
 	bool fin = false;
 	pokemon poke;
 	poke.get_name();
-	Dice d2 = Dice(2);
+	Dice d2 = Dice(1);
 	cout << "Player 1 will roll a D2 to decide who goes first" << endl;
 	for(int i=0;i<1;i++)
 	{
@@ -123,13 +141,23 @@ void colosseum::play(pokemon& p1, pokemon& p2)
 		cout << "Round " << j << "!" << endl;
 		cout << endl;
 		fin = attack(p1, p2);
-		if(p1.health_check()>0)
+		if(p2.health_check()>0)
 		{
 		cout << p2.get_name() << " has " << p2.health_check() << " hit points left";
 		}
 		else
 		{
 		cout << p2.get_name() << " has been defeated";
+		break;
+		}
+		fin = attack(p2, p1);
+		if(p1.health_check()>0)
+		{
+		cout << p1.get_name() << " has " << p1.health_check() << " hit points left";
+		}
+		else
+		{
+		cout << p1.get_name() << " has been defeated";
 		break;
 		}
 	}		
