@@ -17,6 +17,7 @@
 
 #ifndef COLOSSEUM_H
 #define COLOSSEUM_H
+#include "Dice.h"
 #include <string>
 #include "pokemon.h"
 
@@ -153,9 +154,11 @@ class colosseum
 	*return defensebonus
 	*/
 	int defense_bonus;
-	int d20;
-	int d6;
-	int d2;
+	Dice d20;
+	Dice d6aa;
+	Dice d6bb;
+	Dice d6cc;
+	Dice d2;
 
 
 };
