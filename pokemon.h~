@@ -63,7 +63,7 @@ class pokemon
 	*@post sets attackbonus from user
 	*return attackbonus from user
 	*/
-	int set_attackBonus(int attackBonus);
+	int void set_attackBonus(int attackBonus);
 
 	/**
 	*@pre none
@@ -128,7 +128,7 @@ class pokemon
 	*/
 	//bool attack_roll(std::string poke1, int attacker, std::string poke2, int defender);
 
-	string name;
+	std::string name;
 	int health;
 
 	private:

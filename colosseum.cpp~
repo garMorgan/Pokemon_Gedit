@@ -27,19 +27,18 @@ colosseum::colosseum()
 
 void colosseum::userBuild(pokemon& p)
 {
-	pokemon poke;
 	string n1;	
 	
 	cout << "Please name your pokemon" << endl;
 	cin >> n1;
-	poke.set_name(n1);
-	cout << "\n" << poke.get_name() << endl;
+	p.set_name(n1);
+	cout << "\n" << p.get_name() << endl;
 	do
 	{
 	cout << "How many hit points will you have? (1-50): ";
 	cin >> health;
-	poke.set_health(health);
-	cout << "\n" << poke.health_check() << endl;
+	p.set_health(health);
+	cout << "\n" << p.health_check() << endl;
 	}while(health>0 != health<51);
 
 	cout << "\n";
@@ -48,8 +47,8 @@ void colosseum::userBuild(pokemon& p)
 	cout << "Split fifty points between attack level and defense level " << endl;
 	cout << "Enter your attack level (1-49): ";
 	cin >> attack_bonus;
-	poke.set_attackBonus(attack_bonus);
-	cout << "\n" << poke.get_attackBonus() << endl;
+	p.set_attackBonus(attack_bonus);
+	cout << "\n" << p.get_attackBonus() << endl;
 	if(attack_bonus>0 != attack_bonus<50)
 	{
 	cout << "Sorry, attack level must be between 1 and 49: ";
@@ -62,8 +61,8 @@ void colosseum::userBuild(pokemon& p)
 	sum = 50 - attack_bonus;	
 	cout << "Enter your defense level (1-" << sum << "): ";
 	cin >> defense_bonus;
-	poke.set_defenseBonus(defense_bonus);
-	cout << "\n" << poke.get_defenseBonus() << endl;
+	p.set_defenseBonus(defense_bonus);
+	cout << "\n" << p.get_defenseBonus() << endl;
 	if(defense_bonus>0 != defense_bonus<=sum)
 		{
 		cout << "Sorry, defense level must be between 1 and " << sum << ": ";

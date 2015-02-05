@@ -24,7 +24,7 @@ pokemon::pokemon()
 	myPokemon = "";
 }
 
-int pokemon::set_attackBonus(int attackBonus)
+int void pokemon::set_attackBonus(int attackBonus)
 {
 	attack_lvl = attackBonus;
 }
